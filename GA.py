@@ -9,7 +9,7 @@ import random
 class GA:
      
     def __init__(self,iter = 50, mutation = 0.05, crossover = 0.5):
-        self.data = Data("./data/Dauzere_Data")
+        self.data = Data("./data/Source_30_4")
         self.population = self.initPopulation()
         self.iter = iter
         self.mutation = mutation
