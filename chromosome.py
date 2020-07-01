@@ -1,21 +1,26 @@
 import random
+from pprint import pprint
+import os
 
 class Chromosome:
     
     def __init__(self, data_dict):
-        self.__list__ = [] 
-        for options in data_dict:
-            self.set(random.choice(options))
+        if isinstance(data_dict, dict):
+            self.__dict__ = dict(map(lambda jkey: (jkey,data_dict[jkey]),data_dict))
+        else:
+            self.__dict__ = {0:data_dict}
+
+                
             
     def get(self, k):
         return self.__dict__[k]
-    
-    def set(self, v):
-        self.__list__.append((v[0],int(v[1])))
-    
+        
+    def set(self, k,v):
+        self.__dict__[k] = v
+        
     def keys(self):
-        return [x for x,y in self.__list__]
+        return self.__dict__.keys()
     
     def values(self):
-        return [y for x,y in self.__list__]
+        return self.__dict__.values()
     
