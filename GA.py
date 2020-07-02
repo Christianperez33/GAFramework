@@ -73,6 +73,7 @@ class GA:
         fitness = dict(map(lambda x: (x,Fitness(self.population[x])) ,self.population))
         fitness = dict(map(lambda x: (x,{"makespan":[max(fitness[x].makespan),min(fitness[x].makespan)],"energycons":[max(fitness[x].energyCons),min(fitness[x].energyCons)]}) ,fitness))
         pprint(fitness)
+        # print(dict([ (x,len(self.population[x].__phenotype__)) for x in self.population]))
         
         
         
