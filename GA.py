@@ -77,9 +77,6 @@ class GA:
             "energyCons_glob":[round(max(fitness[x].energyCons),2),round(min(fitness[x].energyCons),2)],
             "bt_makespan_energyCons": [round(fitness[x].makespan[np.argmin(fitness[x].makespan+fitness[x].makespan)],2),round(fitness[x].energyCons[np.argmin(fitness[x].makespan+fitness[x].energyCons)],2)]
             }) ,fitness))
-        # pprint(fitness_global)
-        # fitness = dict(map(lambda x: (x,[fitness[x].makespan[np.argmin(fitness[x].makespan+fitness[x].energyCons)] ,fitness[x].energyCons[np.argmin(fitness[x].makespan+fitness[x].energyCons)] ]) ,fitness))
         pprint(fitness_global)
-        
-        # print(dict([ (x,len(self.population[x].__phenotype__)) for x in self.population]))
+
         
